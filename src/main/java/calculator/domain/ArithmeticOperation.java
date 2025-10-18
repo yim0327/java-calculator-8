@@ -8,8 +8,12 @@ public class ArithmeticOperation {
         List<ParsedNumber> numberList = list.getNumberList();
         int total = 0;
 
-        for (ParsedNumber parsedNumber : numberList) {
-            total += parsedNumber.getValue();
+        for (ParsedNumber operand : numberList) {
+            total += operand.getValue();
+        }
+
+        if (total < 0) {
+            throw new ArithmeticException("연산 결과가 너무 큽니다.");
         }
 
         return total;
