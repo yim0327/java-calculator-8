@@ -10,8 +10,8 @@ public class Parser {
         List<ParsedNumber> parsedNumbers = new ArrayList<>();
         String splliter = "[,:]";
 
-        if (inputString.contains("//") && inputString.contains("\\n")) {
-            splliter = "["+customSplit(inputString)+",:]";
+        if (existCustomSplitter(inputString)) {
+            splliter = "["+customSplitter(inputString)+",:]";
         }
 
         for (String parsedString : parsedString(inputString, splliter)) {
@@ -22,7 +22,7 @@ public class Parser {
         return new NumberList(parsedNumbers);
     }
 
-    private String customSplit(String inputString) {
+    private String customSplitter(String inputString) {
         int startSplitterIdx = inputString.indexOf("//");
         int endSplitterIdx = inputString.indexOf("\\n");
         return inputString.substring(startSplitterIdx + 2, endSplitterIdx);
@@ -31,7 +31,7 @@ public class Parser {
     private List<String> parsedString(String inputString, String splitter) {
         int endSplitterIdx = 0;
 
-        if (inputString.contains("//") && inputString.contains("\\n")) {
+        if (existCustomSplitter(inputString)) {
             endSplitterIdx = inputString.indexOf("\\n") + 2;
         }
 
@@ -48,4 +48,7 @@ public class Parser {
         }
     }
 
+    private boolean existCustomSplitter(String inputString) {
+        return inputString.contains("//") && inputString.contains("\\n");
+    }
 }
