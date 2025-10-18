@@ -28,13 +28,13 @@
 ### 도메인 규칙/검증
 - [ ] 커스텀 구분자가 알맞은 형식인지 확인한다.
 
-- [ ] 숫자가 양수인지 확인한다.
+- [x] 숫자가 양수인지 확인한다.
 
 
 ### 예외/엣지 케이스
 - [ ] 사용자가 잘못된 값을 입력할 경우 `IllegalArgumentException`을 발생시킨다.
 
-- [ ] 구분자로 추출된 문자가 숫자가 아닐 시 `NumberFormatException`을 발생시킨다.
+- [x] 구분자로 추출된 문자가 숫자가 아닐 시 `NumberFormatException`을 발생시킨다.
 
 - [ ] 구분자로 추출된 문자가 너무 큰 숫자일 경우 `NumberFormatException`을 발생시킨다.
 
