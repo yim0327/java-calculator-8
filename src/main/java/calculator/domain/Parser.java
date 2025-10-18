@@ -14,8 +14,9 @@ public class Parser {
             splliter = "["+customSplit(inputString)+",:]";
         }
 
-        for (String st : parsedString(inputString, splliter)) {
-            parsedNumbers.add(ParsedNumber.from(st));
+        for (String parsedString : parsedString(inputString, splliter)) {
+            validateWrongInput(parsedString);
+            parsedNumbers.add(ParsedNumber.from(parsedString));
         }
 
         return new NumberList(parsedNumbers);
@@ -39,6 +40,12 @@ public class Parser {
         return Arrays.stream(rawNumString.split(splitter))
                 .map(String::trim)
                 .toList();
+    }
+
+    private void validateWrongInput(String parsedString) {
+        if (!parsedString.matches("[0-9]+")) {
+            throw new IllegalArgumentException("정해진 구분자/양수 외의 잘못된 값이 감지되었습니다.");
+        }
     }
 
 }
