@@ -36,7 +36,7 @@
 
 - [x] 구분자로 추출된 문자가 숫자가 아닐 시 `NumberFormatException`을 발생시킨다.
 
-- [ ] 구분자로 추출된 문자가 너무 큰 숫자일 경우 `NumberFormatException`을 발생시킨다.
+- [x] 구분자로 추출된 문자가 너무 큰 숫자일 경우 `NumberFormatException`을 발생시킨다.
 
-- [ ] 숫자들을 모두 합한 값이 너무 클 때 `ArithmeticException`을 발생시킨다.
+- [x] 숫자들을 모두 합한 값이 너무 클 때 `ArithmeticException`을 발생시킨다.
 
