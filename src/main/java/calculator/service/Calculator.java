@@ -1,6 +1,6 @@
 package calculator.service;
 
-import calculator.domain.ArithmeticOperation;
+import calculator.domain.operation.ArithmeticOperation;
 import calculator.domain.NumberList;
 import calculator.domain.Parser;
 

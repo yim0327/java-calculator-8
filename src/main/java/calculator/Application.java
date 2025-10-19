@@ -1,8 +1,8 @@
 package calculator;
 
 import calculator.controller.CalculateManager;
-import calculator.domain.AdditionOperation;
-import calculator.domain.ArithmeticOperation;
+import calculator.domain.operation.AdditionOperation;
+import calculator.domain.operation.ArithmeticOperation;
 import calculator.domain.Parser;
 import calculator.service.Calculator;
 import calculator.view.InputView;

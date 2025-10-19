@@ -1,4 +1,7 @@
-package calculator.domain;
+package calculator.domain.operation;
+
+import calculator.domain.NumberList;
+import calculator.domain.ParsedNumber;
 
 import java.util.List;
 
