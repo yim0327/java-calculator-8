@@ -7,7 +7,7 @@ import java.util.List;
 public class Parser {
 
     public NumberList parsingNumbers(String inputString) {
-        List<ParsedNumber> parsedNumbers = new ArrayList<>();
+        List<ParsedNumber> parsedList = new ArrayList<>();
         String splliter = "[,:]";
 
         validateCustomFormat(inputString);
@@ -15,12 +15,12 @@ public class Parser {
             splliter = "["+customSplitter(inputString)+",:]";
         }
 
-        for (String parsedString : parsedString(inputString, splliter)) {
-            validateWrongInput(parsedString);
-            parsedNumbers.add(ParsedNumber.from(parsedString));
+        for (String parsedOne : parsedString(inputString, splliter)) {
+            validateWrongInput(parsedOne);
+            parsedList.add(ParsedNumber.from(parsedOne));
         }
 
-        return new NumberList(parsedNumbers);
+        return new NumberList(parsedList);
     }
 
     private String customSplitter(String inputString) {
