@@ -10,6 +10,7 @@ public class Parser {
         List<ParsedNumber> parsedNumbers = new ArrayList<>();
         String splliter = "[,:]";
 
+        validateCustomFormat(inputString);
         if (existCustomSplitter(inputString)) {
             splliter = "["+customSplitter(inputString)+",:]";
         }
@@ -59,6 +60,17 @@ public class Parser {
     private void validateWrongSplitter(String customSplitter) {
         if (customSplitter.matches("[0-9]+|\\s+")) {
             throw new IllegalArgumentException("공백이나 숫자는 커스텀 구분자로 사용할 수 없습니다.");
+        }
+
+        if (customSplitter.contains("//") || customSplitter.contains("\\n")) {
+            throw new IllegalArgumentException("'//'나 '\\n'은 커스텀 구분자로 사용할 수 없습니다.");
+        }
+    }
+
+    private void validateCustomFormat(String inputString) {
+        if ((inputString.contains("//") && !inputString.contains("\\n"))
+        || (!inputString.contains("//") && inputString.contains("\\n"))) {
+            throw new IllegalArgumentException("올바른 커스텀 구분자 형식이 아닙니다.");
         }
     }
 
