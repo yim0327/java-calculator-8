@@ -1,6 +1,7 @@
 package calculator;
 
 import calculator.controller.CalculateManager;
+import calculator.domain.AdditionOperation;
 import calculator.domain.ArithmeticOperation;
 import calculator.domain.Parser;
 import calculator.service.Calculator;
@@ -12,7 +13,7 @@ public class Application {
         InputView inputView = new InputView();
         OutputView outputView = new OutputView();
         Parser parser = new Parser();
-        ArithmeticOperation operation = new ArithmeticOperation();
+        ArithmeticOperation operation = new AdditionOperation();
         Calculator calculator = new Calculator(parser, operation);
         CalculateManager calculateManager = new CalculateManager(inputView, outputView, calculator);
 

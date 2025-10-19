@@ -1,22 +1,5 @@
 package calculator.domain;
 
-import java.util.List;
-
-public class ArithmeticOperation {
-
-    public int addOperation(NumberList list) {
-        List<ParsedNumber> numberList = list.getNumberList();
-        int total = 0;
-
-        for (ParsedNumber operand : numberList) {
-            total += operand.getValue();
-        }
-
-        if (total < 0) {
-            throw new ArithmeticException("연산 결과가 너무 큽니다.");
-        }
-
-        return total;
-    }
-
+public interface ArithmeticOperation {
+    int operate(NumberList list);
 }

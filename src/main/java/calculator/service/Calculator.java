@@ -15,7 +15,7 @@ public class Calculator {
 
     public int calculate(String inputString) {
         NumberList numberList = parser.parsingNumbers(inputString);
-        return operation.addOperation(numberList);
+        return operation.operate(numberList);
     }
 
 }
